@@ -45,6 +45,8 @@ public class Solution
         fizzed.forEach(s -> System.out.println(s));
     }
 
+
+
     public static List<String> fizzBuzz(int n)
     {
         List<String> fizzBuzzedWords = new ArrayList<>();

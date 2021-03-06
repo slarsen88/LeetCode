@@ -37,6 +37,7 @@ public class solution
 
         TreeNode newRoot = null;
 
+        System.out.println("max depth: ");
         System.out.println(maxDepth(root));
 
     }

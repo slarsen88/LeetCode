@@ -57,20 +57,62 @@ public class Solution
             return true;
         }
         Stack<Character> leftFacing = new Stack<>();
-        for (int i = 0; i < s.length(); i++){
-            char currentChar = s.charAt(i);
-            if (!rightFacing.containsKey(currentChar)){
-                leftFacing.push(currentChar);
-            } else if (leftFacing.isEmpty()) {
-                return false;
-            } else if (leftFacing.peek() != rightFacing.get(currentChar))
+        for (int i = 0; i < s.length(); i++)
+        {
+            char curChar = s.charAt(i);
+            if (!rightFacing.containsKey(curChar))
             {
-                return false;
-            } else {
-                leftFacing.pop();
+                leftFacing.push(curChar);
+            }
+            else
+            {
+                char topChar = leftFacing.pop();
+                if (rightFacing.get(curChar) != topChar)
+                {
+                    return false;
+                }
             }
         }
 
         return true;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        for (int i = 0; i < s.length(); i++){
+//            char currentChar = s.charAt(i);
+//           if (rightFacing.containsKey((currentChar)))
+//           {
+//               char top = leftFacing.empty() ? '#' : leftFacing.pop();
+//
+//               if (top != rightFacing.get(currentChar))
+//               {
+//                   return false;
+//               }
+//           }
+//           else
+//           {
+//               leftFacing.push(currentChar);
+//           }
+//        }
+
+//        return leftFacing.empty();
     }
 }
